@@ -48,8 +48,7 @@ std::ostream& operator<<(std::ostream& out, const Vector& v) {
 const double epsilon = 1e-4;
 
 double f(Vector x) {
-	return pow(x.x1, 4) + 20 * pow(x.x1, 3) + 2 * pow(x.x1, 2) * pow(x.x2, 2) + 36 * pow(x.x1, 2) * x.x2 +
-		312 * pow(x.x1, 2) + 20 * x.x1 * pow(x.x2, 2) + 360 * x.x1 * x.x2 + 2121 * x.x1 + pow(x.x2, 4) + 36 * pow(x.x2, 3) + 537 * pow(x.x2, 2) + 3834 * x.x2 + 11308.;
+	return x.x1 * x.x1 + 13 * x.x1 + x.x2 * x.x2 + 4* x.x2 +37;
 }
 
 int main() {
@@ -65,7 +64,7 @@ int main() {
 	double t = 1;
 	int k = 0;
 	int j = 1;
-	Vector x{ 6, 7 };
+	Vector x{ 9, 10 };
 	Vector x0 = x;
 
 	ofstream fout;
@@ -129,5 +128,5 @@ int main() {
 	}
 	fout.close();
 
-	system("plot.py");
+	system("yx.py");
 }
